@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:8080
+@api = posts
+@id = 611397fb47a9de33ec128a03
+
+### @name getAll
+GET {{baseUrl}}/{{api}}
+
+### @name getByID
+GET {{baseUrl}}/{{api}}/{{id}}
+
+### @name createNew
+POST {{baseUrl}}/{{api}}
+Content-Type: application/json
+
+{
+    "title": "Bài đăng mới 3",
+    "content": "Bài đăng không có nội dung 3",
+    "time": 123
+}
+
+### @name deleteByID
+DELETE {{baseUrl}}/{{api}}/{{id}}
+
+### @name updateByID
+PUT {{baseUrl}}/{{api}}/{{id}}
+Content-Type: application/json
+
+{
+    "time": 999
+}

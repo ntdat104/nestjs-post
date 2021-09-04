@@ -1,0 +1,21 @@
+version: "3"
+
+networks:
+  blog:
+    driver: bridge
+
+services:
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:${PORT}
+    volumes:
+      - ./:/app
+    environment:
+      MESSAGE: "App is running"
+    networks:
+      - blog
