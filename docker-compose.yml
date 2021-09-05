@@ -1,8 +1,10 @@
 version: "3"
 
 networks:
-  blog:
-    driver: bridge
+  common:
+
+volumes:
+  db-data:
 
 services:
   server:
@@ -18,4 +20,19 @@ services:
     environment:
       MESSAGE: "App is running"
     networks:
-      - blog
+      - common
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongodb
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - db-data:/data/db
+    networks:
+      - common

@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:8080
 @api = posts
-@id = 611397fb47a9de33ec128a03
+@id = 61343bf1fd69b0002fed3cee
 
 ### @name getAll
 GET {{baseUrl}}/{{api}}
@@ -13,8 +13,8 @@ POST {{baseUrl}}/{{api}}
 Content-Type: application/json
 
 {
-    "title": "Bài đăng mới 3",
-    "content": "Bài đăng không có nội dung 3",
+    "title": "Bài đăng mới 5",
+    "content": "Bài đăng không có nội dung 5",
     "time": 123
 }
 
